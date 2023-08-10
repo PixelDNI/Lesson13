@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <style>
+        #main{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           flex: 1;
+        }
+        #card{
+            flex: 1;
+            width: 300px;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            justify-content: space-around;
+            border: 1px solid black;
+            margin: 2rem 0;
+            text-align: center;
+            padding: 1rem;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        p{
+           margin: 5px 0;
+        }
+        button{
+        width: 50px;
+        height: 30px;
+        border-radius: 30px;
+        background-color: green;
+        color: white;
+        margin: 1rem 0;
+        }
+        #back{
+
+        width: 70px;
+        height: 30px;
+        border-radius: 30px;
+        background-color: red;
+        color: white;
+
+        }
+    </style>
+</head>
+<body>
+    <div id='main'>
+        {% for artist in artists %}
+        <div id="card">
+            <p>{{artist.name}}</p>
+            <p>{{artist.surname}}</p>
+            <p>{{artist.age}}</p>
+            <a href={{artist.get_absolute_url}}><button>More</button></a>
+            <button id="back" onclick="goBack()"> <- Back</button>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+    <script>
+        function goBack() {
+            window.history.go(-1);
+        }
+    </script>
+</body>
+</html>

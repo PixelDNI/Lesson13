@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #main{
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+
+        }
+        div{
+            margin: 0.75rem 0;
+        }
+        a{
+           font-size: 30px;
+           margin
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        {% for genre in genres %}
+            <div>
+                <a href={{genre.get_absolute_url}}>{{genre.genre}}</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
